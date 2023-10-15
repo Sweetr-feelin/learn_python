@@ -1,0 +1,30 @@
+class Dwarf:
+    def __init__(self, dwarf_power, dwarf_health):
+        self.power = dwarf_power
+        self.health = dwarf_health
+        
+    def Work(self):
+        self.power -= 5
+        self.health -= 5
+    
+    def Drink(self,):
+        self.health -= 40
+    
+    def Rest(self,):
+        self.power += 5
+        self.health += 10
+
+dwarf1 = Dwarf(40, 100)
+working_hours = int(input("Сколько часов работал дворф? - "))
+
+for i in range(working_hours):
+    dwarf1.Work()
+print("Сколько сил осталось у дворфа после работы? - ", dwarf1.power, dwarf1.health)
+
+dwarf1.Drink()
+print("Как себя чувствовал дворф после бара? - ", dwarf1.health)
+
+for i in range(8):
+    dwarf1.Rest()
+    
+print("Как себя чувствовал дворф после отдыха? - ", dwarf1.power, dwarf1.health)
